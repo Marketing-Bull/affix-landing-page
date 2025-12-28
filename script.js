@@ -1,96 +1,45 @@
-// Multi-Step Form Functionality
+// Simple Lead Capture Form
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Form step navigation
-    const form = document.getElementById('eligibilityForm');
-    const formSteps = document.querySelectorAll('.form-step');
-    const progressSteps = document.querySelectorAll('.progress-step');
-    const nextButtons = document.querySelectorAll('.next-step');
-    const prevButtons = document.querySelectorAll('.prev-step');
-    let currentStep = 1;
-
-    // Show specific step
-    function showStep(stepNumber) {
-        formSteps.forEach((step, index) => {
-            step.classList.remove('active');
-            progressSteps[index].classList.remove('active');
-            if (index + 1 === stepNumber) {
-                step.classList.add('active');
-                progressSteps[index].classList.add('active');
-            } else if (index + 1 < stepNumber) {
-                progressSteps[index].classList.add('completed');
-            } else {
-                progressSteps[index].classList.remove('completed');
-            }
-        });
-        currentStep = stepNumber;
-
-        // Scroll to form
-        document.getElementById('apply').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    // Validate current step
-    function validateStep(stepNumber) {
-        const currentStepElement = document.querySelector(`.form-step[data-step="${stepNumber}"]`);
-        const requiredFields = currentStepElement.querySelectorAll('[required]');
-        let isValid = true;
-
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                isValid = false;
-                field.classList.add('error');
-
-                // Remove error class on input
-                field.addEventListener('input', function() {
-                    this.classList.remove('error');
-                }, { once: true });
-            }
-        });
-
-        if (!isValid) {
-            // Show error message
-            let errorMsg = currentStepElement.querySelector('.error-message');
-            if (!errorMsg) {
-                errorMsg = document.createElement('p');
-                errorMsg.className = 'error-message';
-                errorMsg.textContent = 'Please fill in all required fields';
-                currentStepElement.insertBefore(errorMsg, currentStepElement.firstChild);
-
-                setTimeout(() => errorMsg.remove(), 3000);
-            }
-        }
-
-        return isValid;
-    }
-
-    // Next button click handlers
-    nextButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            if (validateStep(currentStep)) {
-                if (currentStep < formSteps.length) {
-                    showStep(currentStep + 1);
-                }
-            }
-        });
-    });
-
-    // Previous button click handlers
-    prevButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            if (currentStep > 1) {
-                showStep(currentStep - 1);
-            }
-        });
-    });
-
     // Form submission
+    const form = document.getElementById('leadCaptureForm');
+
     if (form) {
         form.addEventListener('submit', function(e) {
-            if (!validateStep(currentStep)) {
+            // Validate required fields
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('error');
+
+                    // Remove error class on input
+                    field.addEventListener('input', function() {
+                        this.classList.remove('error');
+                    }, { once: true });
+                }
+            });
+
+            if (!isValid) {
                 e.preventDefault();
+
+                // Show error message
+                let errorMsg = form.querySelector('.error-message');
+                if (!errorMsg) {
+                    errorMsg = document.createElement('p');
+                    errorMsg.className = 'error-message';
+                    errorMsg.textContent = 'Please fill in all required fields';
+                    form.insertBefore(errorMsg, form.firstChild);
+
+                    setTimeout(() => errorMsg.remove(), 3000);
+                }
+
                 return false;
             }
-            // Form will submit naturally to FormSubmit.co
+
+            // Form will submit to FormSubmit, which will redirect to Unlock
         });
     }
 

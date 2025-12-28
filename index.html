@@ -37,114 +37,43 @@
         <p class="subtext">No impact to credit score • Pre-qualify in 2 minutes</p>
     </section>
 
-    <!-- Application Form Section -->
+    <!-- Simple Lead Capture Form -->
     <section class="application-form" id="apply">
         <div class="form-container">
-            <h2>Check Your Eligibility in 60 Seconds</h2>
-            <p class="form-subtitle">100% Free • No Credit Impact • No Obligation</p>
+            <h2>Get Your Free Home Equity Estimate</h2>
+            <p class="form-subtitle">See how much you could access • No credit impact • Takes 30 seconds</p>
 
-            <form id="eligibilityForm" action="https://formsubmit.co/info@affixfunding.com" method="POST">
+            <form id="leadCaptureForm" action="https://formsubmit.co/info@affixfunding.com" method="POST">
                 <!-- FormSubmit Configuration -->
-                <input type="hidden" name="_subject" value="New Home Equity Application">
+                <input type="hidden" name="_subject" value="New HEA Lead from Affix Landing Page">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://www.unlock.com/?utm_source=affix&utm_medium=referral">
 
-                <!-- Step 1: Property Information -->
-                <div class="form-step active" data-step="1">
-                    <h3>Property Information</h3>
-                    <div class="form-group">
-                        <label for="propertyAddress">Property Address *</label>
-                        <input type="text" id="propertyAddress" name="Property Address" required placeholder="123 Main St, City, State, ZIP">
-                    </div>
-                    <div class="form-group">
-                        <label for="propertyValue">Estimated Property Value *</label>
-                        <select id="propertyValue" name="Estimated Property Value" required>
-                            <option value="">Select range...</option>
-                            <option value="$175,000 - $250,000">$175,000 - $250,000</option>
-                            <option value="$250,000 - $350,000">$250,000 - $350,000</option>
-                            <option value="$350,000 - $500,000">$350,000 - $500,000</option>
-                            <option value="$500,000 - $750,000">$500,000 - $750,000</option>
-                            <option value="$750,000+">$750,000+</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="mortgageBalance">Remaining Mortgage Balance *</label>
-                        <select id="mortgageBalance" name="Remaining Mortgage Balance" required>
-                            <option value="">Select range...</option>
-                            <option value="$0 (Paid Off)">$0 (Paid Off)</option>
-                            <option value="Under $100,000">Under $100,000</option>
-                            <option value="$100,000 - $200,000">$100,000 - $200,000</option>
-                            <option value="$200,000 - $350,000">$200,000 - $350,000</option>
-                            <option value="$350,000+">$350,000+</option>
-                        </select>
-                    </div>
-                    <button type="button" class="form-btn next-step">Continue →</button>
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="Full Name" required placeholder="John Smith">
                 </div>
 
-                <!-- Step 2: Personal Information -->
-                <div class="form-step" data-step="2">
-                    <h3>Contact Information</h3>
-                    <div class="form-group">
-                        <label for="fullName">Full Name *</label>
-                        <input type="text" id="fullName" name="Full Name" required placeholder="John Smith">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="Email" required placeholder="john@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="Phone" required placeholder="(555) 123-4567">
-                    </div>
-                    <div class="form-buttons">
-                        <button type="button" class="form-btn prev-step">← Back</button>
-                        <button type="button" class="form-btn next-step">Continue →</button>
-                    </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="Email" required placeholder="john@example.com">
                 </div>
 
-                <!-- Step 3: Financial Information -->
-                <div class="form-step" data-step="3">
-                    <h3>Quick Financial Snapshot</h3>
-                    <div class="form-group">
-                        <label for="creditScore">Approximate Credit Score *</label>
-                        <select id="creditScore" name="Credit Score Range" required>
-                            <option value="">Select range...</option>
-                            <option value="500-579">500-579</option>
-                            <option value="580-649">580-649</option>
-                            <option value="650-699">650-699</option>
-                            <option value="700-749">700-749</option>
-                            <option value="750+">750+</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="fundingGoal">How would you use the funds?</label>
-                        <select id="fundingGoal" name="Intended Use of Funds">
-                            <option value="">Select one...</option>
-                            <option value="Debt Consolidation">Debt Consolidation</option>
-                            <option value="Home Renovation">Home Renovation</option>
-                            <option value="Investment">Investment Opportunity</option>
-                            <option value="Business">Business Expenses</option>
-                            <option value="Education">Education</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-buttons">
-                        <button type="button" class="form-btn prev-step">← Back</button>
-                        <button type="submit" class="form-btn submit-btn">Get My Free Estimate →</button>
-                    </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="Phone" required placeholder="(555) 123-4567">
                 </div>
 
-                <!-- Progress Indicator -->
-                <div class="form-progress">
-                    <div class="progress-step active" data-step="1">1</div>
-                    <div class="progress-line"></div>
-                    <div class="progress-step" data-step="2">2</div>
-                    <div class="progress-line"></div>
-                    <div class="progress-step" data-step="3">3</div>
+                <div class="form-group">
+                    <label for="zipCode">Property Zip Code *</label>
+                    <input type="text" id="zipCode" name="Zip Code" required placeholder="90210" maxlength="5" pattern="[0-9]{5}">
                 </div>
+
+                <button type="submit" class="form-btn submit-btn">Continue to Free Estimate →</button>
+
+                <p class="form-disclaimer">By clicking continue, you'll be directed to our partner Unlock.com to complete your application. Affix Financial Solutions works with Unlock to connect homeowners with Home Equity Agreements. Your information will be shared with Unlock and you agree to be contacted regarding your inquiry.</p>
             </form>
-
-            <p class="form-disclaimer">By submitting this form, you agree to be contacted by Affix Financial Solutions regarding your home equity inquiry. Your information is secure and will never be sold.</p>
         </div>
     </section>
 
@@ -172,7 +101,7 @@
     <!-- Testimonials Section -->
     <section class="testimonials">
         <h2>What Homeowners Are Saying</h2>
-        <p class="testimonials-subtitle">Join thousands of homeowners who've unlocked their home equity</p>
+        <p class="testimonials-subtitle">Real results from homeowners who accessed their equity through Unlock</p>
 
         <div class="testimonials-grid">
             <div class="testimonial-card">
@@ -302,8 +231,8 @@
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
             </svg>
-            <h4 class="trust-title">Equal Housing</h4>
-            <p class="trust-desc">A licensed and compliant provider of Home Equity Agreements (HEA).</p>
+            <h4 class="trust-title">Trusted Partner</h4>
+            <p class="trust-desc">We connect homeowners with Unlock, a licensed HEA provider serving all 50 states.</p>
         </div>
     </div>
 </section>
@@ -318,11 +247,11 @@
         <a href="terms.html">Terms of Use</a>
     </div> 
     <p class="footer-meta">
-        Equal Housing Opportunity. Affix Financial Solutions LLC (NMLS #<span class="update-needed">XXXXXX</span>).
-        Phone: (866) 813-8634 | info@affixfunding.com
+        Affix Financial Solutions LLC partners with <a href="https://www.unlock.com" target="_blank" rel="noopener" style="color: #C5A059;">Unlock Technologies, Inc.</a> to provide Home Equity Agreement services.
+        <br>Phone: (866) 813-8634 | info@affixfunding.com
     </p>
-    <p class="footer-note">
-        ⚠️ <strong>UPDATE NEEDED:</strong> Replace placeholder NMLS number with your actual license number.
+    <p class="footer-note" style="background: rgba(197, 160, 89, 0.1); color: #C5A059; border: 1px solid #C5A059;">
+        <strong>Partnership Disclosure:</strong> Affix Financial Solutions is a marketing partner. Home Equity Agreements are provided by Unlock Technologies, Inc. We may receive compensation for qualified referrals.
     </p>
 </footer>
 
