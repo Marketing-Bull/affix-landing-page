@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affix Financial Solutions | Unlock Your Home Equity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head> 
+<body>
+
+    <header>
+        <a href="#" class="logo-text">AFFIX FINANCIAL SOLUTIONS</a>
+        <a href="#apply" class="nav-cta">CHECK ELIGIBILITY</a>
+    </header>
+
+    <section class="hero">
+        <p class="eyebrow">ACCESS EQUITY WITHOUT DEBT</p>
+        <h1>Get Up To $500,000 From Your Home Equity With Zero Monthly Payments</h1>
+        
+        <div class="vsl-container">
+            <!-- Video Coming Soon Placeholder -->
+            <div class="vsl-placeholder">
+                <div class="placeholder-content">
+                    <div class="play-icon">▶</div>
+                    <h3>Watch: How To Access $500K Without Monthly Payments</h3>
+                    <p>Our exclusive video presentation explains everything</p>
+                    <span class="coming-soon-badge">Video Coming Soon</span>
+                </div>
+            </div>
+            <!-- Replace with actual video when ready:
+            <iframe title="Affix VSL" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen loading="lazy"></iframe>
+            -->
+        </div>
+
+        <a href="#apply" class="main-btn" aria-label="See how much I qualify for">See How Much I Qualify For →</a>
+        <p class="subtext">No impact to credit score • Pre-qualify in 2 minutes</p>
+    </section>
+
+    <!-- Application Form Section -->
+    <section class="application-form" id="apply">
+        <div class="form-container">
+            <h2>Check Your Eligibility in 60 Seconds</h2>
+            <p class="form-subtitle">100% Free • No Credit Impact • No Obligation</p>
+
+            <form id="eligibilityForm" action="https://formsubmit.co/info@affixfunding.com" method="POST">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="New Home Equity Application">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <!-- Step 1: Property Information -->
+                <div class="form-step active" data-step="1">
+                    <h3>Property Information</h3>
+                    <div class="form-group">
+                        <label for="propertyAddress">Property Address *</label>
+                        <input type="text" id="propertyAddress" name="Property Address" required placeholder="123 Main St, City, State, ZIP">
+                    </div>
+                    <div class="form-group">
+                        <label for="propertyValue">Estimated Property Value *</label>
+                        <select id="propertyValue" name="Estimated Property Value" required>
+                            <option value="">Select range...</option>
+                            <option value="$175,000 - $250,000">$175,000 - $250,000</option>
+                            <option value="$250,000 - $350,000">$250,000 - $350,000</option>
+                            <option value="$350,000 - $500,000">$350,000 - $500,000</option>
+                            <option value="$500,000 - $750,000">$500,000 - $750,000</option>
+                            <option value="$750,000+">$750,000+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mortgageBalance">Remaining Mortgage Balance *</label>
+                        <select id="mortgageBalance" name="Remaining Mortgage Balance" required>
+                            <option value="">Select range...</option>
+                            <option value="$0 (Paid Off)">$0 (Paid Off)</option>
+                            <option value="Under $100,000">Under $100,000</option>
+                            <option value="$100,000 - $200,000">$100,000 - $200,000</option>
+                            <option value="$200,000 - $350,000">$200,000 - $350,000</option>
+                            <option value="$350,000+">$350,000+</option>
+                        </select>
+                    </div>
+                    <button type="button" class="form-btn next-step">Continue →</button>
+                </div>
+
+                <!-- Step 2: Personal Information -->
+                <div class="form-step" data-step="2">
+                    <h3>Contact Information</h3>
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="Full Name" required placeholder="John Smith">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="Email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="Phone" required placeholder="(555) 123-4567">
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="form-btn prev-step">← Back</button>
+                        <button type="button" class="form-btn next-step">Continue →</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Financial Information -->
+                <div class="form-step" data-step="3">
+                    <h3>Quick Financial Snapshot</h3>
+                    <div class="form-group">
+                        <label for="creditScore">Approximate Credit Score *</label>
+                        <select id="creditScore" name="Credit Score Range" required>
+                            <option value="">Select range...</option>
+                            <option value="500-579">500-579</option>
+                            <option value="580-649">580-649</option>
+                            <option value="650-699">650-699</option>
+                            <option value="700-749">700-749</option>
+                            <option value="750+">750+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fundingGoal">How would you use the funds?</label>
+                        <select id="fundingGoal" name="Intended Use of Funds">
+                            <option value="">Select one...</option>
+                            <option value="Debt Consolidation">Debt Consolidation</option>
+                            <option value="Home Renovation">Home Renovation</option>
+                            <option value="Investment">Investment Opportunity</option>
+                            <option value="Business">Business Expenses</option>
+                            <option value="Education">Education</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="form-btn prev-step">← Back</button>
+                        <button type="submit" class="form-btn submit-btn">Get My Free Estimate →</button>
+                    </div>
+                </div>
+
+                <!-- Progress Indicator -->
+                <div class="form-progress">
+                    <div class="progress-step active" data-step="1">1</div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="2">2</div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="3">3</div>
+                </div>
+            </form>
+
+            <p class="form-disclaimer">By submitting this form, you agree to be contacted by Affix Financial Solutions regarding your home equity inquiry. Your information is secure and will never be sold.</p>
+        </div>
+    </section>
+
+    <section class="inaction">
+        <div class="inaction-content">
+            <h2>Stop Letting Your Wealth Sit Idle While Rates Rise</h2>
+            <p>Traditional banks want you to reset your mortgage or take on high-interest HELOCs.</p>
+            <div class="grid">
+                <div class="pain-point">
+                    <h4>Don't Lose Your Rate</h4>
+                    <p>Keep your existing low mortgage rate. There is no need to refinance.</p>
+                </div>
+                <div class="pain-point">
+                    <h4>Zero Monthly Stress</h4>
+                    <p>Unlike loans, there are no monthly payments or added monthly debt.</p>
+                </div>
+                <div class="pain-point">
+                    <h4>Use Funds for Anything</h4>
+                    <p>Consolidate debt, renovate, or invest. There are no restrictions on use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Homeowners Are Saying</h2>
+        <p class="testimonials-subtitle">Join thousands of homeowners who've unlocked their home equity</p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-quote">"We accessed $150,000 to renovate our kitchen and add a second bathroom. The best part? No monthly payments eating into our retirement budget. This was a game-changer for us."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JM</div>
+                    <div class="author-info">
+                        <h4>John & Maria T.</h4>
+                        <p>San Diego, CA • $150,000 funded</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-quote">"I consolidated $80K in high-interest credit card debt and kept my 3.2% mortgage rate. My financial advisor said this was the smartest move I could have made."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RJ</div>
+                    <div class="author-info">
+                        <h4>Robert J.</h4>
+                        <p>Austin, TX • $95,000 funded</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-quote">"The entire process was seamless. From application to funding took just 3 weeks. We used the funds to help our daughter with her first business and still have equity in our home."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">LS</div>
+                    <div class="author-info">
+                        <h4>Linda S.</h4>
+                        <p>Phoenix, AZ • $200,000 funded</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-center">
+            <a href="#apply" class="main-btn">Calculate My Home Equity Now →</a>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Common Questions</h2>
+        <div class="faq-item">
+            <h4>Will this hurt my credit score?</h4>
+            <p>No. You can check your eligibility with absolutely no impact to your credit score.</p>
+        </div>
+        <div class="faq-item">
+            <h4>What is the minimum credit score?</h4>
+            <p>We work with homeowners who have a minimum credit score of 500.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Is there a penalty for settling early?</h4>
+            <p>No. There is never a penalty for settling your agreement early.</p>
+        </div>
+        <div class="faq-item">
+            <h4>What are the property requirements?</h4>
+            <p>Your property must be valued at $175,000+ with at least 30% equity.</p>
+        </div>
+
+        <div class="cta-center">
+            <a href="#apply" class="main-btn">Check If I Qualify (No Credit Impact) →</a>
+        </div>
+    </section>
+
+    <section class="steps-section">
+        <h2>The steps</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div>
+                    <div class="step-title">Get Pre-qualified</div>
+                    <div>Enter your address and contact information to see how much you qualify.</div>
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div>
+                    <div class="step-title">Submit Your Application</div>
+                    <div>Apply in minutes and upload required documents to get your initial offer.</div>
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div>
+                    <div class="step-title">Discuss Your Options</div>
+                    <div>Talk with a home equity officer about your Home Equity Agreement.</div>
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <div>
+                    <div class="step-title">Finalize Offer</div>
+                    <div>Approve your offer after an appraisal and title report, get funded within three days of closing.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-center">
+            <a href="#apply" class="main-btn">Get My Free $500K Estimate →</a>
+            <p class="subtext">Takes 60 seconds • No commitment required</p>
+        </div>
+    </section>
+
+<section class="trust-strip">
+    <div class="trust-grid">
+        <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <h4 class="trust-title">256-Bit Encryption</h4>
+            <p class="trust-desc">Your personal and property data is protected with bank-level security protocols.</p>
+        </div>
+        <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+            <h4 class="trust-title">Soft Credit Pull</h4>
+            <p class="trust-desc">Checking your eligibility has zero impact on your credit score.</p>
+        </div>
+        <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <h4 class="trust-title">Equal Housing</h4>
+            <p class="trust-desc">A licensed and compliant provider of Home Equity Agreements (HEA).</p>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="site-footer">
+    <p class="footer-name">AFFIX FINANCIAL SOLUTIONS LLC</p>
+    <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a> | 
+        <a href="legal-disclosures.html">Legal Disclosures</a> | 
+        <a href="terms.html">Terms of Use</a>
+    </div> 
+    <p class="footer-meta">
+        Equal Housing Opportunity. Affix Financial Solutions LLC (NMLS #<span class="update-needed">XXXXXX</span>).
+        Phone: (866) 813-8634 | info@affixfunding.com
+    </p>
+    <p class="footer-note">
+        ⚠️ <strong>UPDATE NEEDED:</strong> Replace placeholder NMLS number with your actual license number.
+    </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
