@@ -1,47 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affix Financial Solutions | Unlock Your Home Equity</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head> 
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#C5A059',
+                            dark: '#A08846',
+                            light: '#D4B575',
+                        }
+                    },
+                    fontFamily: {
+                        'cinzel': ['Cinzel', 'serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
 
-    <header>
-        <a href="#" class="logo-text">AFFIX FINANCIAL SOLUTIONS</a>
-        <a href="#apply" class="nav-cta">CHECK ELIGIBILITY</a>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800 px-[5%] py-5 flex justify-between items-center">
+        <a href="#" class="font-cinzel text-gold font-bold text-lg tracking-widest hover:text-gold-light transition-colors">
+            AFFIX FINANCIAL SOLUTIONS
+        </a>
+        <a href="#apply" class="bg-gold hover:bg-gold-dark text-black font-bold px-6 py-3 rounded text-sm uppercase tracking-wide transition-all hover:-translate-y-0.5">
+            CHECK ELIGIBILITY
+        </a>
     </header>
 
-    <section class="hero">
-        <p class="eyebrow">ACCESS EQUITY WITHOUT DEBT</p>
-        <h1>Get Up To $500,000 From Your Home Equity With Zero Monthly Payments</h1>
-        
-        <div class="vsl-container">
-            <!-- Video Coming Soon Placeholder -->
-            <div class="vsl-placeholder">
-                <div class="placeholder-content">
-                    <div class="play-icon">▶</div>
-                    <h3>Watch: How To Access $500K Without Monthly Payments</h3>
-                    <p>Our exclusive video presentation explains everything</p>
-                    <span class="coming-soon-badge">Video Coming Soon</span>
+    <!-- Hero Section -->
+    <section class="py-20 px-[5%] text-center max-w-6xl mx-auto">
+        <p class="text-gold-dark uppercase font-semibold tracking-[2px] text-sm mb-4">
+            ACCESS EQUITY WITHOUT DEBT
+        </p>
+        <h1 class="font-cinzel text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight">
+            Get Up To $500,000 From Your Home Equity With Zero Monthly Payments
+        </h1>
+
+        <!-- Video Container -->
+        <div class="relative pb-[56.25%] h-0 overflow-hidden bg-gray-800 border-2 border-gold rounded-lg my-10 shadow-2xl">
+            <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800">
+                <div class="text-center p-5">
+                    <div class="text-gold text-6xl mb-5">▶</div>
+                    <h3 class="text-white text-xl md:text-2xl font-semibold mb-3">
+                        Watch: How To Access $500K Without Monthly Payments
+                    </h3>
+                    <p class="text-gray-400 mb-5">Our exclusive video presentation explains everything</p>
+                    <span class="inline-block bg-gold text-black px-5 py-2.5 rounded font-bold text-sm uppercase tracking-wider">
+                        Video Coming Soon
+                    </span>
                 </div>
             </div>
-            <!-- Replace with actual video when ready:
-            <iframe title="Affix VSL" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen loading="lazy"></iframe>
-            -->
         </div>
 
-        <a href="#apply" class="main-btn" aria-label="See how much I qualify for">See How Much I Qualify For →</a>
-        <p class="subtext">No impact to credit score • Pre-qualify in 2 minutes</p>
+        <a href="#apply" class="inline-block bg-gold hover:bg-gold-dark text-black font-bold px-10 py-5 rounded text-lg uppercase tracking-wide transition-all hover:-translate-y-1 hover:shadow-2xl shadow-gold/50" aria-label="See how much I qualify for">
+            See How Much I Qualify For →
+        </a>
+        <p class="text-gray-400 text-sm mt-4">
+            No impact to credit score • Pre-qualify in 2 minutes
+        </p>
     </section>
 
-    <!-- Simple Lead Capture Form -->
-    <section class="application-form" id="apply">
-        <div class="form-container">
-            <h2>Get Your Free Home Equity Estimate</h2>
-            <p class="form-subtitle">See how much you could access • No credit impact • Takes 30 seconds</p>
+    <!-- Application Form -->
+    <section class="py-20 px-[5%] bg-gray-800 border-t border-b border-gray-700" id="apply">
+        <div class="max-w-3xl mx-auto bg-gray-900 p-10 md:p-12 border-2 border-gold rounded-lg shadow-2xl">
+            <h2 class="font-cinzel text-3xl md:text-4xl text-center mb-3">
+                Get Your Free Home Equity Estimate
+            </h2>
+            <p class="text-center text-gray-400 mb-10">
+                See how much you could access • No credit impact • Takes 30 seconds
+            </p>
 
             <form id="leadCaptureForm" action="https://formsubmit.co/info@affixfunding.com" method="POST">
                 <!-- FormSubmit Configuration -->
@@ -50,211 +92,262 @@
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_next" value="https://www.unlock.com/?utm_source=affix&utm_medium=referral">
 
-                <div class="form-group">
-                    <label for="fullName">Full Name *</label>
-                    <input type="text" id="fullName" name="Full Name" required placeholder="John Smith">
+                <div class="mb-6">
+                    <label for="fullName" class="block text-white font-semibold mb-2 text-sm">Full Name *</label>
+                    <input type="text" id="fullName" name="Full Name" required placeholder="John Smith"
+                        class="w-full px-4 py-3 bg-gray-800 border-2 border-gray-700 text-white rounded focus:border-gold focus:outline-none transition-colors">
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="Email" required placeholder="john@example.com">
+                <div class="mb-6">
+                    <label for="email" class="block text-white font-semibold mb-2 text-sm">Email Address *</label>
+                    <input type="email" id="email" name="Email" required placeholder="john@example.com"
+                        class="w-full px-4 py-3 bg-gray-800 border-2 border-gray-700 text-white rounded focus:border-gold focus:outline-none transition-colors">
                 </div>
 
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="Phone" required placeholder="(555) 123-4567">
+                <div class="mb-6">
+                    <label for="phone" class="block text-white font-semibold mb-2 text-sm">Phone Number *</label>
+                    <input type="tel" id="phone" name="Phone" required placeholder="(555) 123-4567"
+                        class="w-full px-4 py-3 bg-gray-800 border-2 border-gray-700 text-white rounded focus:border-gold focus:outline-none transition-colors">
                 </div>
 
-                <div class="form-group">
-                    <label for="zipCode">Property Zip Code *</label>
-                    <input type="text" id="zipCode" name="Zip Code" required placeholder="90210" maxlength="5" pattern="[0-9]{5}">
+                <div class="mb-6">
+                    <label for="zipCode" class="block text-white font-semibold mb-2 text-sm">Property Zip Code *</label>
+                    <input type="text" id="zipCode" name="Zip Code" required placeholder="90210" maxlength="5" pattern="[0-9]{5}"
+                        class="w-full px-4 py-3 bg-gray-800 border-2 border-gray-700 text-white rounded focus:border-gold focus:outline-none transition-colors">
                 </div>
 
-                <button type="submit" class="form-btn submit-btn">Continue to Free Estimate →</button>
+                <button type="submit" class="w-full bg-gold hover:bg-gold-dark text-black font-bold px-8 py-4 rounded text-base uppercase tracking-wide transition-all hover:-translate-y-1 hover:shadow-xl">
+                    Continue to Free Estimate →
+                </button>
 
-                <p class="form-disclaimer">By clicking continue, you'll be directed to our partner Unlock.com to complete your application. Affix Financial Solutions works with Unlock to connect homeowners with Home Equity Agreements. Your information will be shared with Unlock and you agree to be contacted regarding your inquiry.</p>
+                <p class="text-center text-gray-400 text-xs leading-relaxed mt-6">
+                    By clicking continue, you'll be directed to our partner Unlock.com to complete your application. Affix Financial Solutions works with Unlock to connect homeowners with Home Equity Agreements. Your information will be shared with Unlock and you agree to be contacted regarding your inquiry.
+                </p>
             </form>
         </div>
     </section>
 
-    <section class="inaction">
-        <div class="inaction-content">
-            <h2>Stop Letting Your Wealth Sit Idle While Rates Rise</h2>
-            <p>Traditional banks want you to reset your mortgage or take on high-interest HELOCs.</p>
-            <div class="grid">
-                <div class="pain-point">
-                    <h4>Don't Lose Your Rate</h4>
-                    <p>Keep your existing low mortgage rate. There is no need to refinance.</p>
+    <!-- Cost of Inaction Section -->
+    <section class="py-20 px-[5%] bg-gray-900 text-center border-b border-gray-800">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="font-cinzel text-3xl md:text-4xl mb-5">
+                Stop Letting Your Wealth Sit Idle While Rates Rise
+            </h2>
+            <p class="text-gray-400 text-lg mb-10">
+                Traditional banks want you to reset your mortgage or take on high-interest HELOCs.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                <div class="bg-gray-800 border-l-4 border-gold p-8 rounded-lg text-left hover:shadow-2xl hover:shadow-gold/20 hover:-translate-y-1 transition-all">
+                    <h4 class="text-white text-xl font-semibold mb-3">Don't Lose Your Rate</h4>
+                    <p class="text-gray-400 leading-relaxed">Keep your existing low mortgage rate. There is no need to refinance.</p>
                 </div>
-                <div class="pain-point">
-                    <h4>Zero Monthly Stress</h4>
-                    <p>Unlike loans, there are no monthly payments or added monthly debt.</p>
+                <div class="bg-gray-800 border-l-4 border-gold p-8 rounded-lg text-left hover:shadow-2xl hover:shadow-gold/20 hover:-translate-y-1 transition-all">
+                    <h4 class="text-white text-xl font-semibold mb-3">Zero Monthly Stress</h4>
+                    <p class="text-gray-400 leading-relaxed">Unlike loans, there are no monthly payments or added monthly debt.</p>
                 </div>
-                <div class="pain-point">
-                    <h4>Use Funds for Anything</h4>
-                    <p>Consolidate debt, renovate, or invest. There are no restrictions on use.</p>
+                <div class="bg-gray-800 border-l-4 border-gold p-8 rounded-lg text-left hover:shadow-2xl hover:shadow-gold/20 hover:-translate-y-1 transition-all">
+                    <h4 class="text-white text-xl font-semibold mb-3">Use Funds for Anything</h4>
+                    <p class="text-gray-400 leading-relaxed">Consolidate debt, renovate, or invest. There are no restrictions on use.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
-        <h2>What Homeowners Are Saying</h2>
-        <p class="testimonials-subtitle">Real results from homeowners who accessed their equity through Unlock</p>
+    <section class="py-20 px-[5%] bg-gray-800 text-center border-b border-gray-700">
+        <h2 class="font-cinzel text-3xl md:text-4xl mb-4">What Homeowners Are Saying</h2>
+        <p class="text-gray-400 text-lg mb-12">Real results from homeowners who accessed their equity through Unlock</p>
 
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-quote">"We accessed $150,000 to renovate our kitchen and add a second bathroom. The best part? No monthly payments eating into our retirement budget. This was a game-changer for us."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">JM</div>
-                    <div class="author-info">
-                        <h4>John & Maria T.</h4>
-                        <p>San Diego, CA • $150,000 funded</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+            <!-- Testimonial 1 -->
+            <div class="bg-gray-900 border border-gray-700 p-8 rounded-lg text-left hover:shadow-2xl hover:shadow-gold/20 hover:-translate-y-1 transition-all">
+                <div class="text-gold text-xl mb-4 tracking-widest">★★★★★</div>
+                <p class="text-gray-300 text-base leading-relaxed mb-6">
+                    "We accessed $150,000 to renovate our kitchen and add a second bathroom. The best part? No monthly payments eating into our retirement budget. This was a game-changer for us."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-gold text-black flex items-center justify-center font-bold text-lg flex-shrink-0">
+                        JM
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold">John & Maria T.</h4>
+                        <p class="text-gray-400 text-sm">San Diego, CA • $150,000 funded</p>
                     </div>
                 </div>
             </div>
 
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-quote">"I consolidated $80K in high-interest credit card debt and kept my 3.2% mortgage rate. My financial advisor said this was the smartest move I could have made."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">RJ</div>
-                    <div class="author-info">
-                        <h4>Robert J.</h4>
-                        <p>Austin, TX • $95,000 funded</p>
+            <!-- Testimonial 2 -->
+            <div class="bg-gray-900 border border-gray-700 p-8 rounded-lg text-left hover:shadow-2xl hover:shadow-gold/20 hover:-translate-y-1 transition-all">
+                <div class="text-gold text-xl mb-4 tracking-widest">★★★★★</div>
+                <p class="text-gray-300 text-base leading-relaxed mb-6">
+                    "I consolidated $80K in high-interest credit card debt and kept my 3.2% mortgage rate. My financial advisor said this was the smartest move I could have made."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-gold text-black flex items-center justify-center font-bold text-lg flex-shrink-0">
+                        RJ
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold">Robert J.</h4>
+                        <p class="text-gray-400 text-sm">Austin, TX • $95,000 funded</p>
                     </div>
                 </div>
             </div>
 
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-quote">"The entire process was seamless. From application to funding took just 3 weeks. We used the funds to help our daughter with her first business and still have equity in our home."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">LS</div>
-                    <div class="author-info">
-                        <h4>Linda S.</h4>
-                        <p>Phoenix, AZ • $200,000 funded</p>
+            <!-- Testimonial 3 -->
+            <div class="bg-gray-900 border border-gray-700 p-8 rounded-lg text-left hover:shadow-2xl hover:shadow-gold/20 hover:-translate-y-1 transition-all">
+                <div class="text-gold text-xl mb-4 tracking-widest">★★★★★</div>
+                <p class="text-gray-300 text-base leading-relaxed mb-6">
+                    "The entire process was seamless. From application to funding took just 3 weeks. We used the funds to help our daughter with her first business and still have equity in our home."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-gold text-black flex items-center justify-center font-bold text-lg flex-shrink-0">
+                        LS
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold">Linda S.</h4>
+                        <p class="text-gray-400 text-sm">Phoenix, AZ • $200,000 funded</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="cta-center">
-            <a href="#apply" class="main-btn">Calculate My Home Equity Now →</a>
+        <div class="text-center mt-10">
+            <a href="#apply" class="inline-block bg-gold hover:bg-gold-dark text-black font-bold px-10 py-5 rounded text-lg uppercase tracking-wide transition-all hover:-translate-y-1 hover:shadow-2xl">
+                Calculate My Home Equity Now →
+            </a>
         </div>
     </section>
 
-    <section class="faq">
-        <h2>Common Questions</h2>
-        <div class="faq-item">
-            <h4>Will this hurt my credit score?</h4>
-            <p>No. You can check your eligibility with absolutely no impact to your credit score.</p>
-        </div>
-        <div class="faq-item">
-            <h4>What is the minimum credit score?</h4>
-            <p>We work with homeowners who have a minimum credit score of 500.</p>
-        </div>
-        <div class="faq-item">
-            <h4>Is there a penalty for settling early?</h4>
-            <p>No. There is never a penalty for settling your agreement early.</p>
-        </div>
-        <div class="faq-item">
-            <h4>What are the property requirements?</h4>
-            <p>Your property must be valued at $175,000+ with at least 30% equity.</p>
+    <!-- FAQ Section -->
+    <section class="py-20 px-[5%] bg-gray-900 max-w-5xl mx-auto">
+        <h2 class="font-cinzel text-3xl md:text-4xl text-center mb-12">Common Questions</h2>
+
+        <div class="space-y-5">
+            <div class="bg-gray-800 border-l-4 border-gold p-6 rounded-lg">
+                <h4 class="text-white text-lg font-semibold mb-2">Will this hurt my credit score?</h4>
+                <p class="text-gray-400 leading-relaxed">No. You can check your eligibility with absolutely no impact to your credit score.</p>
+            </div>
+            <div class="bg-gray-800 border-l-4 border-gold p-6 rounded-lg">
+                <h4 class="text-white text-lg font-semibold mb-2">What is the minimum credit score?</h4>
+                <p class="text-gray-400 leading-relaxed">We work with homeowners who have a minimum credit score of 500.</p>
+            </div>
+            <div class="bg-gray-800 border-l-4 border-gold p-6 rounded-lg">
+                <h4 class="text-white text-lg font-semibold mb-2">Is there a penalty for settling early?</h4>
+                <p class="text-gray-400 leading-relaxed">No. There is never a penalty for settling your agreement early.</p>
+            </div>
+            <div class="bg-gray-800 border-l-4 border-gold p-6 rounded-lg">
+                <h4 class="text-white text-lg font-semibold mb-2">What are the property requirements?</h4>
+                <p class="text-gray-400 leading-relaxed">Your property must be valued at $175,000+ with at least 30% equity.</p>
+            </div>
         </div>
 
-        <div class="cta-center">
-            <a href="#apply" class="main-btn">Check If I Qualify (No Credit Impact) →</a>
+        <div class="text-center mt-10">
+            <a href="#apply" class="inline-block bg-gold hover:bg-gold-dark text-black font-bold px-10 py-5 rounded text-lg uppercase tracking-wide transition-all hover:-translate-y-1 hover:shadow-2xl">
+                Check If I Qualify (No Credit Impact) →
+            </a>
         </div>
     </section>
 
-    <section class="steps-section">
-        <h2>The steps</h2>
-        <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-number">1</div>
+    <!-- Steps Section -->
+    <section class="py-20 px-[5%] bg-gray-800 border-t border-b border-gray-700">
+        <h2 class="font-cinzel text-3xl md:text-4xl text-center mb-12">The Steps</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div class="bg-gray-900 border border-gray-700 p-6 rounded-lg flex gap-5 items-start hover:shadow-2xl hover:shadow-gold/20 hover:-translate-y-1 transition-all">
+                <div class="w-12 h-12 rounded-full bg-gold text-black flex items-center justify-center font-bold text-xl flex-shrink-0">
+                    1
+                </div>
                 <div>
-                    <div class="step-title">Get Pre-qualified</div>
-                    <div>Enter your address and contact information to see how much you qualify.</div>
+                    <div class="text-white font-bold text-lg mb-2">Get Pre-qualified</div>
+                    <div class="text-gray-400 text-sm leading-relaxed">Enter your address and contact information to see how much you qualify.</div>
                 </div>
             </div>
-            <div class="step-card">
-                <div class="step-number">2</div>
+
+            <div class="bg-gray-900 border border-gray-700 p-6 rounded-lg flex gap-5 items-start hover:shadow-2xl hover:shadow-gold/20 hover:-translate-y-1 transition-all">
+                <div class="w-12 h-12 rounded-full bg-gold text-black flex items-center justify-center font-bold text-xl flex-shrink-0">
+                    2
+                </div>
                 <div>
-                    <div class="step-title">Submit Your Application</div>
-                    <div>Apply in minutes and upload required documents to get your initial offer.</div>
+                    <div class="text-white font-bold text-lg mb-2">Submit Your Application</div>
+                    <div class="text-gray-400 text-sm leading-relaxed">Apply in minutes and upload required documents to get your initial offer.</div>
                 </div>
             </div>
-            <div class="step-card">
-                <div class="step-number">3</div>
+
+            <div class="bg-gray-900 border border-gray-700 p-6 rounded-lg flex gap-5 items-start hover:shadow-2xl hover:shadow-gold/20 hover:-translate-y-1 transition-all">
+                <div class="w-12 h-12 rounded-full bg-gold text-black flex items-center justify-center font-bold text-xl flex-shrink-0">
+                    3
+                </div>
                 <div>
-                    <div class="step-title">Discuss Your Options</div>
-                    <div>Talk with a home equity officer about your Home Equity Agreement.</div>
+                    <div class="text-white font-bold text-lg mb-2">Discuss Your Options</div>
+                    <div class="text-gray-400 text-sm leading-relaxed">Talk with a home equity officer about your Home Equity Agreement.</div>
                 </div>
             </div>
-            <div class="step-card">
-                <div class="step-number">4</div>
+
+            <div class="bg-gray-900 border border-gray-700 p-6 rounded-lg flex gap-5 items-start hover:shadow-2xl hover:shadow-gold/20 hover:-translate-y-1 transition-all">
+                <div class="w-12 h-12 rounded-full bg-gold text-black flex items-center justify-center font-bold text-xl flex-shrink-0">
+                    4
+                </div>
                 <div>
-                    <div class="step-title">Finalize Offer</div>
-                    <div>Approve your offer after an appraisal and title report, get funded within three days of closing.</div>
+                    <div class="text-white font-bold text-lg mb-2">Finalize Offer</div>
+                    <div class="text-gray-400 text-sm leading-relaxed">Approve your offer after an appraisal and title report, get funded within three days of closing.</div>
                 </div>
             </div>
         </div>
 
-        <div class="cta-center">
-            <a href="#apply" class="main-btn">Get My Free $500K Estimate →</a>
-            <p class="subtext">Takes 60 seconds • No commitment required</p>
+        <div class="text-center mt-12">
+            <a href="#apply" class="inline-block bg-gold hover:bg-gold-dark text-black font-bold px-10 py-5 rounded text-lg uppercase tracking-wide transition-all hover:-translate-y-1 hover:shadow-2xl">
+                Get My Free $500K Estimate →
+            </a>
+            <p class="text-gray-400 text-sm mt-4">Takes 60 seconds • No commitment required</p>
         </div>
     </section>
 
-<section class="trust-strip">
-    <div class="trust-grid">
-        <div class="trust-item">
-            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
-            <h4 class="trust-title">256-Bit Encryption</h4>
-            <p class="trust-desc">Your personal and property data is protected with bank-level security protocols.</p>
+    <!-- Trust Strip -->
+    <section class="py-16 px-[5%] bg-gray-900 text-center border-b border-gray-800">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+            <div class="p-8 bg-gray-800 border border-gray-700 rounded-lg">
+                <svg class="w-12 h-12 text-gold mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <h4 class="font-cinzel text-white font-semibold mb-2">256-Bit Encryption</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">Your personal and property data is protected with bank-level security protocols.</p>
+            </div>
+            <div class="p-8 bg-gray-800 border border-gray-700 rounded-lg">
+                <svg class="w-12 h-12 text-gold mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+                <h4 class="font-cinzel text-white font-semibold mb-2">Soft Credit Pull</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">Checking your eligibility has zero impact on your credit score.</p>
+            </div>
+            <div class="p-8 bg-gray-800 border border-gray-700 rounded-lg">
+                <svg class="w-12 h-12 text-gold mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <h4 class="font-cinzel text-white font-semibold mb-2">Trusted Partner</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">We connect homeowners with Unlock, a licensed HEA provider serving all 50 states.</p>
+            </div>
         </div>
-        <div class="trust-item">
-            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
-            <h4 class="trust-title">Soft Credit Pull</h4>
-            <p class="trust-desc">Checking your eligibility has zero impact on your credit score.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-[5%] bg-gray-800 text-center border-t border-gray-700">
+        <p class="font-cinzel text-gold-dark text-lg tracking-widest mb-4">AFFIX FINANCIAL SOLUTIONS LLC</p>
+        <div class="text-gray-400 text-xs mb-5">
+            <a href="privacy-policy.html" class="hover:text-gold transition-colors">Privacy Policy</a> |
+            <a href="legal-disclosures.html" class="hover:text-gold transition-colors">Legal Disclosures</a> |
+            <a href="terms.html" class="hover:text-gold transition-colors">Terms of Use</a>
         </div>
-        <div class="trust-item">
-            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
-            <h4 class="trust-title">Trusted Partner</h4>
-            <p class="trust-desc">We connect homeowners with Unlock, a licensed HEA provider serving all 50 states.</p>
-        </div>
-    </div>
-</section>
+        <p class="text-gray-400 text-xs leading-relaxed mb-4">
+            Affix Financial Solutions LLC partners with <a href="https://www.unlock.com" target="_blank" rel="noopener" class="text-gold hover:text-gold-light transition-colors">Unlock Technologies, Inc.</a> to provide Home Equity Agreement services.
+            <br>Phone: (866) 813-8634 | info@affixfunding.com
+        </p>
+        <p class="max-w-3xl mx-auto bg-gold/10 text-gold border border-gold rounded-lg p-4 text-xs leading-relaxed">
+            <strong>Partnership Disclosure:</strong> Affix Financial Solutions is a marketing partner. Home Equity Agreements are provided by Unlock Technologies, Inc. We may receive compensation for qualified referrals.
+        </p>
+    </footer>
 
-
-
-<footer class="site-footer">
-    <p class="footer-name">AFFIX FINANCIAL SOLUTIONS LLC</p>
-    <div class="footer-links">
-        <a href="privacy-policy.html">Privacy Policy</a> | 
-        <a href="legal-disclosures.html">Legal Disclosures</a> | 
-        <a href="terms.html">Terms of Use</a>
-    </div> 
-    <p class="footer-meta">
-        Affix Financial Solutions LLC partners with <a href="https://www.unlock.com" target="_blank" rel="noopener" style="color: #C5A059;">Unlock Technologies, Inc.</a> to provide Home Equity Agreement services.
-        <br>Phone: (866) 813-8634 | info@affixfunding.com
-    </p>
-    <p class="footer-note" style="background: rgba(197, 160, 89, 0.1); color: #C5A059; border: 1px solid #C5A059;">
-        <strong>Partnership Disclosure:</strong> Affix Financial Solutions is a marketing partner. Home Equity Agreements are provided by Unlock Technologies, Inc. We may receive compensation for qualified referrals.
-    </p>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
